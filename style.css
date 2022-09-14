@@ -1,0 +1,378 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: montserrat;
+    font-size: 65%;
+}
+
+/*============ NAV-BAR ============*/
+.navbar input[type="checkbox"],
+.navbar .hamburger-lines{
+    display: none;
+}
+.container{
+    max-width: 1200px;
+    width: 90%;
+    margin: auto;
+}
+.navbar{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    background: #008080;
+    color: #808000;
+    z-index: 100;
+}
+.navbar-container{
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    align-items: center;
+}
+.menu-items{
+    order: 2;
+    display: flex;
+}
+.menu-items li{
+    display: inline-block;
+    margin: 10px;
+    font-size: large;
+}
+.logo{
+    margin-top: -15px;
+    line-height: 80px;
+    vertical-align: middle;
+    height: 100%;
+}
+.navbar a{
+    color: #800080;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+}
+.navbar a:hover{
+    color: #808000;
+}
+@media (max-width: 768px){
+    .navbar{
+        opacity: 0.95;
+    }
+    .navbar-container input[type="checkbox"],
+    .navbar-container .hamburger-lines{
+        display: block;
+    }
+    .navbar-container{
+        display: block;
+        position: relative;
+        height: 64px;
+    }
+    .navbar-container input[type="checkbox"]{
+        position: absolute;
+        display: block;
+        height: 32px;
+        width: 30px;
+        top: 20px;
+        left: 20px;
+        z-index: 5;
+        opacity: 0;
+        cursor: pointer;
+    }
+    .navbar-container .hamburger-lines{
+        display: block;
+        height: 28px;
+        width: 35px;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .navbar-container .hamburger-lines .line{
+        display: block;
+        height: 4px;
+        width: 100%;
+        border-radius: 10px;
+        background: #333;
+    }   
+    .navbar-container .hamburger-lines .line1{
+        transform-origin: 0% 0%;
+        transition: transform 0.3s ease-in-out;
+    }
+    .navbar-container .hamburger-lines .line2{
+        transition: transform 0.2s ease-in-out;
+    }
+    .navbar-container .hamburger-lines .line3{
+        transform-origin: 0% 100%;
+        transition: transform 0.3s ease-in-out;
+    }
+    .navbar .menu-items{
+        padding-top: 100px;
+        background: #007676;
+        height: 100vh;
+        max-width: 300px;
+        transform: translate(-150%);
+        display: flex;
+        flex-direction: column;
+        margin-left: -40px;
+        padding-left: 40px;
+        transition: transform 0.5s ease-in-out;
+        box-shadow:  5px 0px 10px 0px #aaa;
+        overflow: scroll;
+    }
+    .navbar .menu-items li{
+        margin-bottom: 1.8rem;
+        font-size: 1.1rem;
+        font-weight: 500;
+    }
+    .logo{
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 2.5rem;
+    }
+    .navbar-container input[type="checkbox"]:checked ~ .menu-items{
+        transform: translateX(0);
+    }
+    .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line1{
+        transform: rotate(45deg);
+    }
+    .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line2{
+        transform: scaleY(0);
+    }
+    .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line3{
+        transform: rotate(-45deg);
+    }
+}
+
+@media (max-width: 500px){
+    .navbar-container input[type="checkbox"]:checked ~ .logo{
+        display: none;
+    }
+}
+
+/*============ MAIN-HOME ============*/
+.promotions{
+    margin-top: 80px;
+    margin-bottom: 40px;
+    background-image: url('images/mall_outside.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment:scroll;
+    background-position: center;
+}
+.promotions img{
+    width: 55%;
+    margin-left: 22.5%;
+}
+
+/*============ CONTENT-PAGES ============*/
+.content-page{
+    margin-top: 80px;
+    margin-bottom: 40px;
+}
+.content-page h2{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    font-weight: 400;
+    color: #808000;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+.content-page p{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 12px;
+    text-align: justify;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+.content-page img{
+    display: block;
+    margin: auto;
+    width: 80%;
+    padding-top: 5px;
+}
+
+/*================ STORE-DIRECTORY-PAGE ================*/
+#store-directory-content{
+    margin-top: 80px;
+    margin-bottom: 40px;
+    background-image: url('images/mall_background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment:scroll;
+    background-position: center;
+}
+/*============ STORE CATEGORY ============*/
+.store-category{
+    height: 150px;
+    width: 80%;
+    margin: auto;
+    display: block;
+    background: rgba(128, 0, 128, 0.4);
+    padding: 10px;
+    margin-top: 15px;
+}
+.store-category h2{
+    padding : 0;
+    margin-bottom :0;
+    width : 100%;
+    color : #808000;
+    text-transform: uppercase;
+    background: rgba(203, 182, 218, 1.0);
+}
+.store {
+    height: 50px;
+    width: 100%;
+    display: block;
+    margin: auto;
+    padding-top: 10px;
+}
+.store img{
+    height: 80%;
+    float: left;
+    background-color: #fff;
+}
+.store a{
+    text-decoration: none;
+    color: #333;
+    display: block;
+    margin-top: 12px;
+    padding-left: 50px;
+    font-size: large;
+}
+.store a:hover{
+    color: #808000;
+}
+
+/*============ STORE-PAGE ============*/
+.store-page{
+    margin-top: 80px;
+    margin-bottom: 40px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+#logo-banner{
+    width: 100%;
+    height: 250px;
+}
+.store-page p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    text-align: justify;
+}
+.store-page img{
+    width: 80%;
+    margin: auto;
+}
+
+/*============ MOVIES-PAGE ==============*/
+#main{
+    margin-top: 85px;
+    margin-bottom: 45px;
+}
+
+a.movie-box{
+    text-decoration: none;
+    background: rgba(128, 0, 128, 0.4);
+    width: 90%;
+    height: 150px;
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    padding: 1px; 
+}
+.movie-box img{
+    height: 130px;
+    margin: 10px;
+    float : left;
+}
+.movie-box h3{
+    padding : 25px;
+    margin-bottom :0;
+    width : 90%;
+    color : #333;
+    font-size: xx-large;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.movie-box p{
+    margin : 0;
+    padding: 0;
+    width: 90%;
+    color: #808000;
+    font-weight: bolder;
+}
+/*======== MOVIE ========*/
+#movie-box-full{
+    background-color: rgba(128, 0, 128, 0.4) ;
+    width: 90%;
+    display: block;
+    margin: auto;
+    margin-top: 12px;
+    padding: 10px;
+}
+#movie-box-full h3{
+    text-align: center;
+    font-size:xxx-large;
+    color: #808000;
+}
+#movie-box-full img{
+    width: 100%;
+}
+#movie-box-full p{
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+}
+
+/*============ CONTACT-PAGE =============*/
+input{
+    width: 80%;
+    height: 25px;
+    margin-left: 25px;
+    margin-top: 5px;
+    border: 1px solid #929292;
+}
+textarea{
+    width: 80%;
+    height: 65px;
+    margin-left: 25px;
+    margin-top: 5px;
+    border: 1px solid #929292;
+}
+.button{
+    display: block;
+    width: 80%;
+    margin-left: 25px;
+    margin-top: 5px;
+    background-color: #800080;
+    text-decoration: none;
+    text-align: center;
+    color: #808000;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 8px 0;
+}
+
+/*============ SOCIALS-MEDIA ============*/
+.social-media{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 40px;
+    background-color: #007676;
+}
+.social-media img{
+   display: block;
+   margin: auto;
+   height: 100%;
+   padding: -5px;
+}
